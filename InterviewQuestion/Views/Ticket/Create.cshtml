@@ -1,0 +1,76 @@
+﻿@using TicketSystem.data.Enum;
+@using TicketSystem.Models;
+@using InterviewQuestion.ViewModle
+@model CreateTicketModleView
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Title">
+        <span asp-validation-for="Title" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Summary">Description</label>
+        <input asp-for="Summary" class="form-control" placeholder="Description">
+        <span asp-validation-for="Summary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden"  value="Assigned" id="Status"  asp-for="Status" placeholder="Assigned" />
+@*         <input type="hidden" asp-for="Status" class="form-control"> *@
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label asp-for="Priority">Club Category</label>
+
+        <select asp-for="Priority" asp-items="@(Html.GetEnumSelectList<TicketPriority>())" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Severity">Club Category</label>
+
+        <select asp-for="Severity" asp-items="@(Html.GetEnumSelectList<TicketSeverity>())" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+
+        <span asp-validation-for="Severity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Type</label>
+
+        <select asp-for="Type" asp-items="@(Html.GetEnumSelectList<TicketType>())" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+
+        <span asp-validation-for="Severity" class="text-danger"></span>
+    </div>
+
+   
+
+   
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

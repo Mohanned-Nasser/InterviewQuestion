@@ -1,0 +1,50 @@
+﻿@using TicketSystem.data.Enum;
+@using TicketSystem.Models;
+@model Ticket
+
+<form method="post" asp-action="Resolve" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+       
+        <input type="hidden"  asp-for="Title" class="form-control" placeholder="Title">
+      
+    </div>
+    <div class="form-group">
+        
+        <input type="hidden"  asp-for="Description" class="form-control" placeholder="Description">
+      
+    </div>
+
+    <div class="form-group">
+       
+        <input type="hidden"  asp-for="Summary" class="form-control" placeholder="Summary">
+        
+    </div>
+
+
+    @* <div class="form-group">
+       
+        <select asp-for="Priority" asp-items="@Html.GetEnumSelectList<TicketPriority>()" class="form-control">
+            <option selected="selected" value="">--Select--</option>
+        </select>
+       
+    </div>
+    <div class="form-group">
+      
+        <select asp-for="Severity" asp-items="@Html.GetEnumSelectList<TicketSeverity>()" class="form-control">
+            <option selected="selected" value="">--Select--</option>
+        </select>
+       
+    </div>
+    <div class="form-group">
+        
+        <select asp-for="Type" asp-items="@Html.GetEnumSelectList<TicketType>()" class="form-control">
+            <option selected="selected" value="">--Select--</option>
+        </select>
+       
+    </div>
+ *@
+
+    <button type="submit" class="btn btn-primary">Click Here To Resolve the Ticket</button>
+</form>
